@@ -1,0 +1,30 @@
+.name_title {
+  color: black;
+  margin: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 95px;
+}
+
+.box_title {
+  width:400px;
+  background-color: white;
+  padding: 5px;
+  margin-left:540px;
+  margin-right: 540px;
+  margin-top: 30px;
+  border-radius: 20px;
+}
+
+.box_game {
+  background-color: white;
+  margin-left:380px;
+  margin-right: 380px;
+  padding-bottom: 500px;
+  margin-top: 30px;
+  border-radius: 25px;
+}
+
+body {
+  background-color: rgb(13, 185, 13);
+}
