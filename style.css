@@ -1,5 +1,7 @@
 .name_title {
   color: black;
+  font-family:"Poetsen One", sans-serif;
+  font-style: italic;
   margin: 25px;
   font-size: 25px;
   font-weight: bold;
@@ -14,17 +16,21 @@
   margin-right: 540px;
   margin-top: 30px;
   border-radius: 20px;
+  border: 5px solid;
 }
 
 .box_game {
+  display: flex;
   background-color: white;
   margin-left:380px;
   margin-right: 380px;
-  padding-bottom: 500px;
+  padding-bottom: 200px;
   margin-top: 30px;
+  margin-bottom: 0px;
   border-radius: 25px;
+  border: 5px solid;
 }
 
 body {
-  background-color: rgb(13, 185, 13);
+  background-color: rgb(98, 220, 98);
 }
