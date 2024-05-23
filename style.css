@@ -1,16 +1,22 @@
+body {
+  background-color: rgb(38, 138, 209);
+  padding: 0 10px;
+  justify-content: center;
+  align-items: center;
+}
+
 .name_title {
   color: black;
   font-family:"Poetsen One", sans-serif;
   font-style: italic;
-  margin: 25px;
   font-size: 25px;
   font-weight: bold;
-  margin-left: 95px;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .box_title {
-  width:400px;
-  background-color: white;
+  background-color: rgb(209, 231, 247);
   padding: 5px;
   margin-left:540px;
   margin-right: 540px;
@@ -21,16 +27,105 @@
 
 .box_game {
   display: flex;
-  background-color: white;
-  margin-left:380px;
-  margin-right: 380px;
+  background-color: rgb(209, 231, 247);
+  align-items: flex-end;
+  gap: 70px;
+  margin-left:225px;
+  margin-right: 225px;
   padding-bottom: 200px;
   margin-top: 30px;
-  margin-bottom: 0px;
   border-radius: 25px;
   border: 5px solid;
 }
 
-body {
-  background-color: rgb(98, 220, 98);
+.keyboard {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
 }
+
+.keyboard button {
+  width: calc(100% / 10 - 4px);
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 5px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.keyboard button:hover {
+  background-color: rgb(209, 231, 247);
+}
+
+
+.letter_display {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin-bottom: 55px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.letter_display .letter {
+  width: 30px;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: sans-serif;
+  border-bottom: 3px solid rgb(0, 0, 0);
+}
+
+.letter_display .letter.guessed{
+  border-color: transparent;
+  margin: -30px 0 0px;
+}
+
+.box_game h5 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.box_game h5 b {
+  font-weight: 600;
+}
+
+.box_game h4 {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.box_game h4 b {
+  font-weight: 600;
+}
+
+/*Vista computadora*/
+@media (min_width: 769px) {
+  .box_title {
+    width: 400px;
+  }
+}
+
+/*Vista tablet*/
+@media (min-width: 768px) and (max-width: 1199px) {
+  .box_title {
+     width: 300px;
+   }
+ }
+
+ /*Vista mobil*/
+@media (max-width: 767px) {
+  .box_title {
+     width: 100%;
+     margin: 15px auto;
+   }
+ }
