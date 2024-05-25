@@ -1,6 +1,6 @@
 body {
   background-color: rgb(38, 138, 209);
-  padding: 0 10px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -13,6 +13,8 @@ body {
   font-weight: bold;
   text-align: center;
   text-transform: uppercase;
+  display:flex;
+  flex-direction:row;
 }
 
 .box_title {
@@ -23,6 +25,8 @@ body {
   margin-top: 30px;
   border-radius: 20px;
   border: 5px solid;
+  display:flex;
+  flex-direction:row;
 }
 
 .box_game {
@@ -36,6 +40,11 @@ body {
   margin-top: 30px;
   border-radius: 25px;
   border: 5px solid;
+}
+
+.hangman_box {
+  padding: 30px;
+  display: block;
 }
 
 .keyboard {
@@ -56,6 +65,11 @@ body {
   border-radius: 5px;
   text-transform: uppercase;
   padding: 5px;
+}
+
+.keyboard_button[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
 }
 
 .keyboard button:hover {
