@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <title>El Ahorcado - Microproyecto 1</title>
+    <link rel="icon" href="https://play-lh.googleusercontent.com/7q1x2W3oDqcwGQTuXRqe0pgQTHyMqbT89rgTdwrOWBx7qRyWQhHFDHotScXDNDzMGkw">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-images.css">
+    <script src="scripts/script.js" defer></script>
+
+  </head>
+
+  <body>
+    
+    <div class="finish_modal">
+      <div class="content">
+        <img src="imagenes/lose.gif" alt="gif"/>
+        <h4>Perdiste!</h4>
+        <p>La palabra correcta era: <b>europa</b></p>
+        <button class="regame">Jugar de nuevo</button>
+      </div>
+
+    </div>
+
+    <div class="box_title">
+      <P class="name_title">El Ahorcado</P>
+    </div>
+
+    <div class="box_game">
+      <div class="hangman_box">
+        <img class="imagen_box" src="imagenes/hangman-0.svg">
+        <div class="scoreboard_table" id="scoreBoard">
+          <h2>Tabla de Puntajes</h2>
+          <table id="scoreTable">
+              <thead>
+                  <tr>
+                      <th>Jugador</th>
+                      <th>Puntaje</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+          <button class="reset-table">Borrar tabla</button>
+        </div>
+        
+      </div>
+
+      <div class="box_game2">
+        <div class="keyboard"></div>
+        <ul class="letter_display"></ul>
+        <h5 class="hint">Pista: <b>ipsum dolor sit amet consectetur, adipisicing elit.</b></h5>
+        <h4 class="guesses"></h4>
+      </div>
+    </div>
+
+  </body>
+
+</html>
