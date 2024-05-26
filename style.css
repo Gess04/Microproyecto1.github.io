@@ -27,6 +27,8 @@ body {
   border: 5px solid;
   display:flex;
   flex-direction:row;
+  align-items: center;
+  justify-content: center;
 }
 
 .box_game {
@@ -55,8 +57,7 @@ body {
   margin-top: 30px;
 }
 
-.keyboard button {
-  width: calc(100% / 10 - 4px);
+:where(.finish_modal, .keyboard) button {
   color: black;
   font-size: 15px;
   font-weight: 600;
@@ -64,7 +65,11 @@ body {
   background-color: aliceblue;
   border-radius: 5px;
   text-transform: uppercase;
+}
+
+.keyboard button {
   padding: 5px;
+  width: calc(100% / 10 - 4px);
 }
 
 .keyboard_button[disabled] {
@@ -72,10 +77,62 @@ body {
   pointer-events: none;
 }
 
-.keyboard button:hover {
+:where(.finish_modal, .keyboard) button:hover {
   background-color: rgb(209, 231, 247);
 }
 
+.finish_modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.6);
+  transition: 0.4s ease;
+  padding: 0 15px;
+}
+
+.finish_modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.finish_modal .content {
+  background-color: white;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  border-radius: 10px;
+  padding: 30px
+}
+.finish_modal img{
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.finish_modal h4 {
+  font-size: 25px;
+
+}
+
+.finish_modal p {
+  font-size: 16px;
+  margin: 15px 0 30px;
+  font-weight: 500;
+}
+
+.finish_modal p b {
+  font-weight: 700;
+}
+.finish_modal .button {
+  padding: 15px 25px;
+}
 
 .letter_display {
   display: flex;
