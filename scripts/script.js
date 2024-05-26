@@ -14,6 +14,38 @@ const wordlist = [
   {
     word:"futbol",
     hint:"Deporte mas famoso del mundo."
+  },
+  {
+    word:"azucar",
+    hint:"Sustancia utilizada para dar dulzor a los alimentos."
+  },
+  {
+    word:"azafran",
+    hint:"Especia mas cara del mundo."
+  },
+  {
+    word:"bambu",
+    hint:"Planta de la que se alimentan los osos panda."
+  },
+  {
+    word:"manzana",
+    hint:"Fruta de color rojo que cae de los arboles."
+  },
+  {
+    word:"washington",
+    hint:"Apellido del primer presidente de los Estados Unidos."
+  },
+  {
+    word:"brasil",
+    hint:"Seleccion nacional de futbol con mas mundiales ganados."
+  },
+  {
+    word:"rio",
+    hint:"Corriente de agua dulce que generalmente desemboca en lagos."
+  },
+  {
+    word:"hormiga",
+    hint:"Animal mas fuerte del mundo."
   }
 ];
 
