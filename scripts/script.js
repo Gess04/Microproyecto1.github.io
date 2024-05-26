@@ -68,9 +68,7 @@ const gameOver = (isVictory) => {
     finishModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     finishModal.classList.add("show");
     updateScoreTable(isVictory ? 1:0);
-  }, 300);
-  
-  
+  }, 300); 
 }
 
 /*Funcion flecha para inicializar las letras del teclado */
