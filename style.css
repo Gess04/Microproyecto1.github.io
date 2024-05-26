@@ -3,6 +3,7 @@ body {
   padding: 10px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0px;
 }
 
 .name_title {
@@ -22,7 +23,7 @@ body {
   padding: 5px;
   margin-left:540px;
   margin-right: 540px;
-  margin-top: 30px;
+  margin-top: 5px;
   border-radius: 20px;
   border: 5px solid;
   display:flex;
@@ -38,14 +39,22 @@ body {
   gap: 70px;
   margin-left:225px;
   margin-right: 225px;
-  padding-bottom: 200px;
-  margin-top: 30px;
+  margin-top: 10px;
   border-radius: 25px;
   border: 5px solid;
 }
 
+.box_game2 {
+  margin: 10px;
+}
+
+.image_box {
+  padding-top: 2px;
+}
+
 .hangman_box {
   padding: 30px;
+  padding-top: 90px;
   display: block;
 }
 
@@ -54,7 +63,7 @@ body {
   gap: 5px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 :where(.finish_modal, .keyboard) button {
@@ -169,6 +178,10 @@ body {
   font-weight: 600;
 }
 
+.reset-table {
+  margin-top: 8px;
+}
+
 .box_game h4 {
   text-align: center;
   font-size: 20px;
@@ -177,6 +190,11 @@ body {
 
 .box_game h4 b {
   font-weight: 600;
+}
+
+.scoreboard_table {
+  padding-bottom: 15px;
+  margin-bottom:0px;
 }
 
 /*Vista computadora*/

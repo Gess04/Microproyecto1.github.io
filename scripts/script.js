@@ -17,17 +17,21 @@ const wordlist = [
   }
 ];
 
+/**Se inicializan las variables para poder darle funcionalidad con el codigo de javascript */
 const keyboardDiv = document.querySelector(".keyboard");
 const hangmanImage = document.querySelector(".hangman_box img");
 const guessesText = document.querySelector(".guesses");
 const wordDisplay = document.querySelector(".letter_display");
 const finishModal = document.querySelector(".finish_modal");
-const playAgain = document.querySelector(".finish_modal");
+const playAgainButton = document.querySelector(".regame");
+const resetButton = document.querySelector(".reset-table");
+const scoreTableBody = document.querySelector("#scoreTable tbody");
+const scoreTable = document.querySelector("#scoreTable");
 let currentWord, correctLetters, wrongGuessCount = 0;
 const maxGuesses = 6;
 
 
-/*Comenzar el juego de nuevo*/
+/*Funcion flecha para comenzar el juego de nuevo*/
 const startOver = () => {
   correctLetters = [];
   wrongGuessCount = 0;
@@ -36,6 +40,12 @@ const startOver = () => {
   keyboardDiv.querySelectorAll("button").forEach(button => button.disabled = false);
   wordDisplay.innerHTML = currentWord.split("").map(() =>'<li class="letter"></li>').join("");
   finishModal.classList.remove("show");
+  getRandomWord();
+}
+
+const resetTable = () => {
+  localStorage.clear();
+  scoreTableBody.innerHTML = ""
 }
 
 /*Generar palabras aleatoriamente por medio de una funcion flecha*/
@@ -43,11 +53,13 @@ const getRandomWord = () => {
   const {word, hint} = wordlist[Math.floor(Math.random() * wordlist.length)];
   console.log(word);
   currentWord = word;
+  correctLetters=[];
   document.querySelector(".hint").innerText = hint;
   wordDisplay.innerHTML = currentWord.split("").map(() =>'<li class="letter"></li>').join("");
-  startOver();
+  finishModal.classList.remove("show");
 }
 
+/*Funcion flecha para determinar si el jugador ha ganado o perdido.*/
 const gameOver = (isVictory) => {
   setTimeout(() => {
     const modalText = isVictory ? "Adivinaste la palabra:" : "La palabra correcta era";
@@ -55,9 +67,11 @@ const gameOver = (isVictory) => {
     finishModal.querySelector("h4").innerText = `${isVictory ? "Has Ganado!" :  "Has Perdido!"}`;
     finishModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
     finishModal.classList.add("show");
+    updateScoreTable(isVictory ? 1:0);
   }, 300);
+  
+  
 }
-
 
 /*Funcion flecha para inicializar las letras del teclado */
 const initGame = (button, clickedLetter) => {
@@ -92,4 +106,36 @@ for (let i = 97; i <= 122; i++) {
 }
 
 getRandomWord();
-playAgainButton.addEventListener("click", getRandomWord);
+playAgainButton.addEventListener("click", startOver);
+resetButton.addEventListener("click", resetTable)
+
+/**Funcion flecha para actualizar la tabla de puntajes, incluyendo el registro de nuevos jugadores*/
+const updateScoreTable = (score) => {
+  let scores = JSON.parse(localStorage.getItem("scores")) || [];
+  const playerName = prompt("Introduce tu nombre:");
+  scores.push({ player: playerName, score: score });
+  localStorage.setItem("scores", JSON.stringify(scores));
+  renderScoreTable();
+}
+
+/**Funcion flecha para crear la tabla al inicializar el juego */
+const renderScoreTable = () => {
+  let scores = JSON.parse(localStorage.getItem("scores")) || [];
+  scoreTableBody.innerHTML = "";
+  scores.forEach(({ player, score }) => {
+      const row = document.createElement("tr");
+      const playerCell = document.createElement("td");
+      const scoreCell = document.createElement("td");
+      playerCell.innerText = player;
+      scoreCell.innerText = score;
+      row.appendChild(playerCell);
+      row.appendChild(scoreCell);
+      scoreTableBody.appendChild(row);
+  });
+  scoreTable.style.border = "2px solid black";
+  scoreTable.querySelectorAll("th, td").forEach(cell => {
+      cell.style.border = "1px solid black";
+  });
+}
+
+renderScoreTable();

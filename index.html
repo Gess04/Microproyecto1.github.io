@@ -9,18 +9,17 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-images.css">
     <script src="scripts/script.js" defer></script>
-    <script src="scripts/list.js" defer></script>
-    
+
   </head>
 
   <body>
-
+    
     <div class="finish_modal">
       <div class="content">
         <img src="imagenes/lose.gif" alt="gif"/>
         <h4>Perdiste!</h4>
         <p>La palabra correcta era: <b>europa</b></p>
-        <button class="star_over">Jugar de Nuevo</button>
+        <button class="regame">Jugar de nuevo</button>
       </div>
 
     </div>
@@ -31,7 +30,22 @@
 
     <div class="box_game">
       <div class="hangman_box">
-        <img src="imagenes/hangman-0.svg">
+        <img class="imagen_box" src="imagenes/hangman-0.svg">
+        <div class="scoreboard_table" id="scoreBoard">
+          <h2>Tabla de Puntajes</h2>
+          <table id="scoreTable">
+              <thead>
+                  <tr>
+                      <th>Jugador</th>
+                      <th>Puntaje</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+          </table>
+          <button class="reset-table">Borrar tabla</button>
+        </div>
+        
       </div>
 
       <div class="box_game2">
@@ -40,7 +54,6 @@
         <h5 class="hint">Pista: <b>ipsum dolor sit amet consectetur, adipisicing elit.</b></h5>
         <h4 class="guesses"></h4>
       </div>
-
     </div>
 
   </body>
